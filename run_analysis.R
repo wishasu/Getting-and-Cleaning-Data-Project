@@ -34,7 +34,7 @@ names(data_merge)<-gsub("Gyro", "Gyroscope", names(data_merge))
 names(data_merge)<-gsub("Mag", "Magnitude", names(data_merge))
 names(data_merge)<-gsub("BodyBody", "Body", names(data_merge))
 
-## Create and write tidy dataset,match Assignment4
+## Create and write tidy dataset,match Assignment5
 tidyset <- melt(data_merge,id.vars=c("subject",'activity.name'))
 tidyset<-dcast(tidyset,subject+activity.name~variable,mean)
 write.table(tidyset, file = "tidy.txt", row.names = FALSE)
